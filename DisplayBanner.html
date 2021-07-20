@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="Title-logo.svg" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+                // $fn.scrollSpeed(step, speed, easing);
+                jQuery.scrollSpeed(350, 300);
+    });
+
+    /* Custom scrolling speed with jQuery
+    // Source: github.com/ByNathan/jQuery.scrollSpeed
+    // Version: 1.0.2
+
+    (function($) {
+
+        jQuery.scrollSpeed = function(step, speed, easing) {
+
+            var $document = $(document),
+                $window = $(window),
+                $body = $('html, body'),
+                option = easing || 'default',
+                root = 0,
+                scroll = false,
+                scrollY,
+                scrollX,
+                view;
+
+            if (window.navigator.msPointerEnabled)
+
+                return false;
+
+            $window.on('mousewheel DOMMouseScroll', function(e) {
+
+                var deltaY = e.originalEvent.wheelDeltaY,
+                    detail = e.originalEvent.detail;
+                    scrollY = $document.height() > $window.height();
+                    scrollX = $document.width() > $window.width();
+                    scroll = true;
+
+                if (scrollY) {
+
+                    view = $window.height();
+
+                    if (deltaY < 0 || detail > 0)
+
+                        root = (root + view) >= $document.height() ? root : root += step;
+
+                    if (deltaY > 0 || detail < 0)
+
+                        root = root <= 0 ? 0 : root -= step;
+
+                    $body.stop().animate({
+
+                        scrollTop: root
+
+                    }, speed, option, function() {
+
+                        scroll = false;
+
+                    });
+                }
+
+                if (scrollX) {
+
+                    view = $window.width();
+
+                    if (deltaY < 0 || detail > 0)
+
+                        root = (root + view) >= $document.width() ? root : root += step;
+
+                    if (deltaY > 0 || detail < 0)
+
+                        root = root <= 0 ? 0 : root -= step;
+
+                    $body.stop().animate({
+
+                        scrollLeft: root
+
+                    }, speed, option, function() {
+
+                        scroll = false;
+
+                    });
+                }
+
+                return false;
+
+            }).on('scroll', function() {
+
+                if (scrollY && !scroll) root = $window.scrollTop();
+                if (scrollX && !scroll) root = $window.scrollLeft();
+
+            }).on('resize', function() {
+
+                if (scrollY && !scroll) view = $window.height();
+                if (scrollX && !scroll) view = $window.width();
+
+            });       
+        };
+
+        jQuery.easing.default = function (x,t,b,c,d) {
+
+            return -c * ((t=t/d-1)*t*t*t - 1) + b;
+        };
+
+    })(jQuery); */
+    </script>
+
+    <script>
+        $(window).on('beforeunload', function() {
+          $('body').hide();
+          $(window).scrollTop(0);
+        });
+        
+        /*load page after scroll*/
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            }
+        });
+        
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+    </script>
+
+    <title>Chatsuree — UX/UI Designer</title>
+</head>
+<body class="bg-white">
+    <!-- navbar  -->
+    <nav class="navbar container-fluid fixed-top navbar-expand-lg navbar-dark" style="background-color: #1340be;">
+      <a class="navbar-brand" href="index.html">
+            <svg width="48" height="48">       
+              <image href="Logo.svg" width="48" height="48"/>
+            </svg>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-0 ml-auto">
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-link nav-item dropdown">
+                <a class="dropdown-toggle mr-3" href="ui-ux-design.html" role="button" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  UI/UX
+                </a>
+                <div class="dropdown-menu fade-up" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="RealTimeMonitoring.html">Real-Time Monitoring</a>
+                  <a class="dropdown-item" href="zendesk.html">Zendesk Re-design</a>
+                  <a class="dropdown-item" href="yumm.html">Yumm Application</a>
+                  <a class="dropdown-item" href="worldchess.html">World Chess Re-design</a>
+                </div>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="WebDesign.html">Web Design</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="DisplayBanner.html" id="currentLink">Display Ad</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="socialAd.html">Social Ad</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="linesticker.html">LINE Sticker</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="Corporate.html">Corporate</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="infographic.html">Infographic</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="catalogue.html">Catalogue</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="press.html">Press</a>
+            </li>
+            <li class="nav-link nav-item align-middle">
+                <a href="contact.html" class="btn-outline-light mr-3" role="button">Contact me</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="container-fluid pb-5" style="padding-top:90px;background-color:#1340be;">
+        <div class="container">
+            <div class="row align-content-center no-margin" style="height: 550px;">
+                <div class="col text-center">
+                    <p class="hero-header">Display Ads <span class="blink">|</span></p>
+                    <p class="sudhead-text">Create eye-catching and visually apprealling display banner advertising which also reflect your brand to your targeted audiences. This is the less expensive advertising option that give the ability to track your audiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container p-5 mt-5 mb-5">
+        
+        <div class="card-columns">
+          <div class="card mb-4">
+            <img class="card-img-top imagehover" src="displayBanner/khaoyai.jpg" alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modalChateau">
+            <div class="card-body">
+              <h5 class="card-title">Chateau de Khao Yai</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalChateau">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <img class="card-img-top imagehover" src="displayBanner/atMind/Altera.gif" alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modalAltera">
+            <div class="card-body">
+              <h5 class="card-title">Altera Hotel</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalAltera">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <video class="card-img-top video-fluid imagehover" autoplay loop muted alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modal137">
+                <source src="displayBanner/137/Comp1.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">137 Pillars Bangkok</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modal137">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <video class="card-img-top video-fluid imagehover" autoplay loop muted alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modalMason">
+                <source src="displayBanner/Mason/PNG/Mason.mp4" type="video/mp4" />
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">Mason Pattaya</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalMason">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <img class="card-img-top imagehover" src="displayBanner/atMind/Amber.gif" style="cursor:pointer;" data-toggle="modal" data-target="#modalAmber">
+            <div class="card-body">
+              <h5 class="card-title">Amber Hotel</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalAmber">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <img class="card-img-top imagehover" src="displayBanner/atMind/Arden.gif" alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modalArden">
+            <div class="card-body">
+              <h5 class="card-title">Arden Hotel</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalArden">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <img class="card-img-top imagehover" src="displayBanner/atMind/Aster.gif" alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modalAster">
+            <div class="card-body">
+              <h5 class="card-title">Aster Pattaya</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalAster">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <img class="card-img-top imagehover" src="displayBanner/atMind/TheGrass.gif" alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modalTheGrass">
+            <div class="card-body">
+              <h5 class="card-title">The Grass Hotel</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalTheGrass">See full picture</a>
+            </div>
+          </div>
+          <div class="card mb-4">
+            <video class="card-img-top video-fluid imagehover" autoplay loop muted alt="Card image cap" style="cursor:pointer;" data-toggle="modal" data-target="#modalInterCon">
+                  <source src="displayBanner/InterconVideo.mp4" type="video/mp4" />
+             </video>
+            <div class="card-body">
+              <h5 class="card-title">InterContinental Hua Hin Resort</h5>
+              <a href="#" class="card-text" data-toggle="modal" data-target="#modalInterCon">See full picture</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modalChateau" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalChateau">Chateau de Khaoyai</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="displayBanner/khaoyai.jpg" style="width:100%;height:auto;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalAltera" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAltera">Altera</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="displayBanner/atMind/Altera.gif" style="width:100%;height:auto;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modal137" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal137">137 Pillars</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <video class="video-fluid" autoplay loop muted>
+                            <source src="displayBanner/137/Comp1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalMason" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalMason">Mason Pattaya</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <video class="video-fluid" autoplay loop muted>
+                            <source src="displayBanner/Mason/PNG/Mason.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalAmber" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAmber">Amber</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="displayBanner/atMind/Amber.gif" style="width:100%;height:auto;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalArden" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalArden">Arden</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="displayBanner/atMind/Arden.gif" style="width:100%;height:auto;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalAster" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalAster">Aster</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="displayBanner/atMind/Aster.gif" style="width:100%;height:auto;" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalTheGrass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTheGrass">The Grass</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="displayBanner/atMind/TheGrass.gif" style="width:100%;height:auto;" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalInterCon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-body">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="modalInterCon">InterContinental</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <video autoplay loop muted>
+                          <source src="displayBanner/InterconVideo.mp4" type="video/mp4" />
+                      </video>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+    
+   
+
+    <div class="container-fluid pt-4 pb-4" style="background-color: #11114e">
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col-md-12 d-flex my-auto justify-content-center text-center">
+                    <p class="bottom-text">Want to disscuss more? Get in touch and let’s make something great together!<br><span style="font-weight: 200;font-size: 0.8em;">Made with love by Chatsuree Siripolsomsuk. © All rights reserved.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+    </html>

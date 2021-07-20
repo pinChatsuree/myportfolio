@@ -1,0 +1,418 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="Title-logo.svg" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+                // $fn.scrollSpeed(step, speed, easing);
+                jQuery.scrollSpeed(350, 300);
+    });
+
+    /* Custom scrolling speed with jQuery
+    // Source: github.com/ByNathan/jQuery.scrollSpeed
+    // Version: 1.0.2
+
+    (function($) {
+
+        jQuery.scrollSpeed = function(step, speed, easing) {
+
+            var $document = $(document),
+                $window = $(window),
+                $body = $('html, body'),
+                option = easing || 'default',
+                root = 0,
+                scroll = false,
+                scrollY,
+                scrollX,
+                view;
+
+            if (window.navigator.msPointerEnabled)
+
+                return false;
+
+            $window.on('mousewheel DOMMouseScroll', function(e) {
+
+                var deltaY = e.originalEvent.wheelDeltaY,
+                    detail = e.originalEvent.detail;
+                    scrollY = $document.height() > $window.height();
+                    scrollX = $document.width() > $window.width();
+                    scroll = true;
+
+                if (scrollY) {
+
+                    view = $window.height();
+
+                    if (deltaY < 0 || detail > 0)
+
+                        root = (root + view) >= $document.height() ? root : root += step;
+
+                    if (deltaY > 0 || detail < 0)
+
+                        root = root <= 0 ? 0 : root -= step;
+
+                    $body.stop().animate({
+
+                        scrollTop: root
+
+                    }, speed, option, function() {
+
+                        scroll = false;
+
+                    });
+                }
+
+                if (scrollX) {
+
+                    view = $window.width();
+
+                    if (deltaY < 0 || detail > 0)
+
+                        root = (root + view) >= $document.width() ? root : root += step;
+
+                    if (deltaY > 0 || detail < 0)
+
+                        root = root <= 0 ? 0 : root -= step;
+
+                    $body.stop().animate({
+
+                        scrollLeft: root
+
+                    }, speed, option, function() {
+
+                        scroll = false;
+
+                    });
+                }
+
+                return false;
+
+            }).on('scroll', function() {
+
+                if (scrollY && !scroll) root = $window.scrollTop();
+                if (scrollX && !scroll) root = $window.scrollLeft();
+
+            }).on('resize', function() {
+
+                if (scrollY && !scroll) view = $window.height();
+                if (scrollX && !scroll) view = $window.width();
+
+            });       
+        };
+
+        jQuery.easing.default = function (x,t,b,c,d) {
+
+            return -c * ((t=t/d-1)*t*t*t - 1) + b;
+        };
+
+    })(jQuery); */
+    </script>
+    
+    
+    <script>
+        $(window).on('beforeunload', function() {
+          $('body').hide();
+          $(window).scrollTop(0);
+        });
+        
+        /*load page after scroll*/
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            }
+        });
+        
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+    </script>
+
+    <title>Chatsuree — UX/UI Designer</title>
+</head>
+<body class="bg-light">
+    <!-- navbar  -->
+    <nav class="navbar container-fluid fixed-top navbar-expand-lg navbar-dark" style="background-color: #1340be;">
+      <a class="navbar-brand" href="index.html">
+            <svg width="48" height="48">       
+              <image href="Logo.svg" width="48" height="48"/>
+            </svg>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-0 ml-auto">
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-link nav-item dropdown">
+                <a class="dropdown-toggle mr-3" href="ui-ux-design.html" role="button" id="navbarDropdownMenuLink currentLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  UI/UX
+                </a>
+                <div class="dropdown-menu fade-up" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="RealTimeMonitoring.html">Real-Time Monitoring</a>
+                  <a class="dropdown-item" href="zendesk.html">Zendesk Re-design</a>
+                  <a class="dropdown-item active" id="dropdown_active" href="yumm.html">Yumm Application</a>
+                  <a class="dropdown-item" href="worldchess.html">World Chess Re-design</a>
+                </div>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="WebDesign.html">Web Design</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="DisplayBanner.html">Display Ad</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="socialAd.html">Social Ad</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="linesticker.html">LINE Sticker</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="Corporate.html">Corporate</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="infographic.html">Infographic</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="catalogue.html">Catalogue</a>
+            </li>
+            <li class="nav-link nav-item">
+                <a class="mr-3" href="press.html">Press</a>
+            </li>
+            <li class="nav-link nav-item align-middle">
+                <a href="contact.html" class="btn-outline-light mr-3" role="button">Contact me</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- hero -->
+    <div class="container-fluid pb-5" style="padding-top:90px;background-color:#1340be;">
+        <div class="container">
+            <div class="row align-content-center no-margin" style="height: 550px;">
+                <div class="col text-center">
+                    <p class="hero-header">yumm application <span class="blink">|</span></p>
+                    <p class="sudhead-text">yumm is the application aims to serve best food delivery experience to customers. Red colour is their main brand colours which they believe that the hot tone appetize more than those of cold ones.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row align-content-center no-margin" style="height: 50px;padding-top: 50px;padding-bottom: 20px;">
+                <div class="col-md-12">
+                    <a class="breadcrumb-text disabled">UI/UX</a> <span class="breadcrumb-text" style="font-weight: 200; color: #c2c2c2;">></span> <a class="breadcrumb-text" href="yumm.html">yumm</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="container-fluid pb-5">
+        <div class="container pb-3">
+            <div class="row align-content-center no-margin">
+                <div class="col-md-8">
+                    <p class="content-header" style="font-weight: 500;">Gather Requirements</p>
+                    <p class="subhead-content pr-5">At the very first step, I gathered both general and specific requirements from clients towards what they want. In general, those requirements are</p>
+                    <ul class="subhead-content">
+                      <li>A simple onboard processes</li>
+                      <li>Easy to search menu and restaurants</li>
+                      <li>Clear delivery on progress</li>
+                      <li>Easy to find open-close hours</li>
+                      <li>To have rating and review system</li>
+                      <li>To have basic functions such as user profile, notifications, and about</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 my-auto">
+                    <img src="ux/yumm1.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid pb-5 pt-5 bg-white">
+        <div class="container">
+            <div class="row align-content-center no-margin">
+                <div class="col-md-12 text-center">
+                    <p class="content-header" style="font-weight: 500;">Competitors Research</p>
+                    <p class="subhead-content">There are, to name only few, brands most of us have already known, they are LINE Man, foodpanda, Grab Food, and Get. These four top-notch needed to be studied first towards what they are good at and what shall be improved.</p>
+                    <img src="ux/yumm2.jpg" />
+                </div>
+            </div>
+        </div>
+        <div class="container pb-3">
+            <div class="row align-content-center no-margin">
+                <div class="col-md-12">
+                    <p class="content-header" style="font-weight: 500;">Set up Questionnairs</p>
+                    <p class="subhead-content pr-5">Take a further step with prepared questionaires. Real users are being given the questions and I waited for their answers. Some of those questions are</p>
+                    <ul class="subhead-content">
+                      <li>What has been most common experience with delivery times?</li>
+                      <li>What has been your most common experience with billing?</li>
+                      <li>What is your top concern in ordering restaurant food via mobile based food app?</li>
+                      <li>If you have experienced food via mobile app, how was the packaging of the food delivered?</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="row no-margin">
+                <div class="col-md-12">
+                    <p class="content-header" style="font-weight: 500;">From 50 testers, it shows that</p>
+                    <ul class="subhead-content">
+                        <li><b style="font-weight: 600;">What has been most common experience with delivery times?</b><br>84% happy with the food delivered within 1 hour and 16% accounted for general delayed.</li>
+                        <li><b style="font-weight: 600;">What has been your most common experience with billing?</b><br>68% said they are accurated and only 32% replied otherwise.</li>
+                        <li><b style="font-weight: 600;">What is your top concern in ordering restaurant food via mobile based food app?</b><br>Quality was the majority that took up to 66 percent while about 34% said about timeliness.</li>
+                        <li><b style="font-weight: 600;">If you have experienced food via mobile app, how was the packaging of the food delivered?</b><br>75% 
+                        said they are well-packed and only with 25% satisfied.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row no-margin">
+                <div class="col">     
+                    <img src="ux/pie-chart-1.svg"/>
+                </div>
+                <div class="col">
+                    <img src="ux/pie-chart-2.svg"/>
+                </div>
+                <div class="col">
+                    <img src="ux/pie-chart-3.svg"/>
+                </div>
+                <div class="col">
+                    <img src="ux/pie-chart-4.svg"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid pt-5 pb-5">
+        <div class="container">
+            <div class="row align-content-center text-center no-margin">
+                <div class="col-12 text-center pb-5">
+                    <p class="content-header" style="font-weight: 500;">Persona</p>
+                    <p class="subhead-content">Representation of goals to be achieved by prospect users <br>and
+sometimes we received user criteria from user requirements.</p>
+                </div>
+            </div>
+            <div class="row align-content-center no-margin pb-5">
+                <div class="col-12 text-center float-fight">
+                    <svg class="mr-5" width="380" height="460" style="filter: drop-shadow(20px 20px 50px #bfbfbf);">       
+                      <image href="ux/persona1.svg" width="380" height="460"/>
+                    </svg>
+                    <svg width="380" height="460" style="filter: drop-shadow(20px 20px 50px #bfbfbf);">       
+                      <image href="ux/persona2.svg" width="380" height="460"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="row justify-content-center no-margin">
+                <div class="pb-5 mr-5">
+                    <p class="content-header" style="font-weight: 500;">They are looking for</p>
+                    <ul class="subhead-content">
+                      <li>Quality of service/restaurant</li>
+                      <li>Delivery time</li>
+                      <li>Price criteria</li>
+                      <li>Restaurant score/review from other users</li>
+                    </ul>
+                </div>
+                <div class="pb-5">
+                    <p class="content-header" style="font-weight: 500;">Common frustrations</p>
+                    <ul class="subhead-content">
+                      <li>Delivery time/ quality</li>
+                      <li>Complicated app usage</li>
+                      <li>Lack of review</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid text-center" style="background-color: #d13653;">
+        <p style="padding-top: 1.5em;padding-bottom: 1.5em;margin: 0;color: white;font-family: 'Jost', sans-serif !important;font-size: 3em;
+        font-weight: 500;">User Task Flow</p>
+    </div>
+    <div class="container-fluid pt-5 pb-5">
+        <div class="container">
+            <div class="row align-content-center text-center no-margin">
+                <div class="col-12 text-center pb-5">
+                    <svg class="mr-5" width="800" height="1062">       
+                      <image href="ux/User%20Flow.svg" width="800" height="1062"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-white pt-5 pb-5">
+        <div class="container pb-3">
+            <div class="row align-content-center no-margin">
+                <div class="col-md-4 my-auto">
+                    <p class="content-header" style="font-weight: 500;">High Fidelity Wireframing</p>
+                    <p class="subhead-content pr-5">Overall dummy interface to indicate where items will be place with no visual in it.</p>
+                </div>
+                <div class="col-md-8 my-auto">
+                    <svg class="mr-5" width="800" height="197">       
+                      <image href="ux/Wireframing.svg" width="800" height="197"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid pt-5 pb-5">
+        <div class="container pb-3">
+            <div class="row align-content-center no-margin">
+                <div class="col-md-12 my-auto pb-5">
+                    <p class="content-header" style="font-weight: 500;">UI Design</p>
+                </div>
+            </div>
+            <div class="row align-content-center no-margin">
+                <div class="col-md-12 my-auto">
+                    <p class="content-header" style="font-weight: 500;">Landing, Registration, and Homepage</p>
+                    <p class="subhead-content pr-5">First, they need to create account yet if users have accounts already, then they can log in through app account, Facebook, or Google email. Divided into categories users can explore and provide coupons at the end of the page.<br>Once menu clicked, then go to restaurant page (giving  bigger chance to order related foods).<br>** Promotion always on top ** Then move on to add-on topping, if any.</p>
+                </div>
+            </div>
+            <div class="row align-content-center no-margin">
+                <div class="col-md-12 my-auto">
+                    <img src="ux/yumm3.png" width=100%/>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="container-fluid pb-5">
+        <div class="container pb-3">
+            <div class="row align-content-center no-margin">
+                <div class="col-md-12 my-auto">
+                    <p class="content-header" style="font-weight: 500;">Cart, Track Order, and Profile Page</p>
+                    <p class="subhead-content pr-5">On the Cart Page, this allows user to use coupon if the have and the total will be recalculated.<br>After payment finished, app will re-direct user to the map page in order to enable client to track their order and also make a call.<br>Optionally, user can track their order via profile section and see notifications.</p>
+                </div>
+            </div>
+            <div class="row align-content-center no-margin">
+                <div class="col-md-12 my-auto">
+                    <img src="ux/yumm4.png" width=100%/>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     <div class="container-fluid pt-4 pb-4" style="background-color: #11114e">
+        <div class="container">
+            <div class="row pt-4">
+                <div class="col-md-12 d-flex my-auto justify-content-center text-center">
+                    <p class="bottom-text">Want to disscuss more? Get in touch and let’s make something great together!<br><span style="font-weight: 200;font-size: 0.8em;">Made with love by Chatsuree Siripolsomsuk. © All rights reserved.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
